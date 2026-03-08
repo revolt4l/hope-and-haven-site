@@ -34,6 +34,12 @@ const AboutSection = () => {
             <p className="font-body text-muted-foreground leading-relaxed text-sm">
               This is a place where we gather together in quality praise and worship of the true and living God, equipped with the Word of God for growth and fellowship with one another in covenant relationship, and released to make a formidable impact in our world for the Kingdom.
             </p>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm mt-3">
+              TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you.
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm mt-3">
+              Here we do not look at the bigness of your problem but the bigness of our God.
+            </p>
           </motion.div>
 
           <motion.div

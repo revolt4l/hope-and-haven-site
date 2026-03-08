@@ -3,8 +3,9 @@ import { Quote } from "lucide-react";
 
 const testimonies = [
   {
-    name: "Sister Funke Adeyemi",
-    text: "God healed me of a chronic illness that doctors said had no cure. I give all glory to God for His faithfulness!",
+    name: "All March Celebrants",
+    text: "Happy Birthday to all our March celebrants! May the Lord bless you with good health, long life, and abundant grace. Your new age is blessed in Jesus' name!",
+    isBirthday: true,
   },
   {
     name: "Brother James Okonkwo",

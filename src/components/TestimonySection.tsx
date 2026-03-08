@@ -49,7 +49,6 @@ const TestimonySection = () => {
       const { data, error } = await supabase
         .from("testimonies")
         .select("name, testimony")
-        .eq("is_approved", true)
         .order("created_at", { ascending: false });
 
       if (!error && data && data.length > 0) {

@@ -66,7 +66,7 @@ const AboutSection = () => {
               <img
                 src={pastor1}
                 alt="Reverend Marcus Akinduko - Pastor of TREM Oke Aro"
-                className="w-full h-64 md:h-full object-cover"
+                className="w-full h-80 md:h-full object-contain object-center"
               />
             </div>
             <div className="md:col-span-3 p-6 md:p-8">

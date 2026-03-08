@@ -55,7 +55,7 @@ const TestimonySection = () => {
               className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out px-4"
               style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
             >
-              <Quote className="w-8 h-8 text-secondary mb-4" />
+              {(t as any).isBirthday ? <Cake className="w-8 h-8 text-secondary mb-4" /> : <Quote className="w-8 h-8 text-secondary mb-4" />}
               <p className="text-lg md:text-xl font-body text-muted-foreground italic leading-relaxed mb-6">
                 "{t.text}"
               </p>

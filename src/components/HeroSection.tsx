@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -26,32 +26,30 @@ const HeroSection = () => {
           >
             Welcome to TREM · Oke Aro, Akure
           </motion.p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground leading-tight mb-6">
-            You Are{" "}
-            <span className="text-gold-gradient">Welcome Home</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground leading-tight mb-4">
+            TREM{" "}
+            <span className="text-gold-gradient">Oke Aro</span>
           </h1>
-          <p className="text-primary-foreground/80 font-body text-lg md:text-xl max-w-xl mb-4 leading-relaxed">
-            At The Redeemed Evangelical Mission, Oke Aro, we believe every life is precious and every soul matters. Come experience God's love in a warm, Spirit-filled community.
+          <p className="text-primary-foreground/90 font-body text-lg md:text-xl max-w-xl mb-3 leading-relaxed">
+            A place of worship, growth, and transformation.
           </p>
-          <p className="text-primary-foreground/60 font-body text-base max-w-lg mb-8 leading-relaxed italic">
-            "Come as you are — leave transformed."
-          </p>
+          <div className="flex items-center gap-2 text-primary-foreground/60 font-body text-sm mb-8">
+            <MapPin className="w-4 h-4 text-secondary" />
+            <span>Behind Idanre Garage, Akure, Ondo State</span>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#schedule"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 font-body font-semibold text-primary-foreground transition-all hover:opacity-90"
             >
-              Join Us This Sunday
+              Plan Your Visit
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/2348037382276"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary-foreground/30 px-8 py-4 font-body font-semibold text-primary-foreground transition-all hover:bg-primary-foreground/10"
+              href="#schedule"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-secondary/50 px-8 py-4 font-body font-semibold text-secondary transition-all hover:bg-secondary/10"
             >
-              <MessageCircle className="w-5 h-5" />
-              Chat With Us
+              Join Us This Sunday
             </a>
           </div>
         </motion.div>

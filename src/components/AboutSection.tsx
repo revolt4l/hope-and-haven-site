@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Eye, BookOpen } from "lucide-react";
+import { Target, Eye, Flame, BookOpen } from "lucide-react";
 import pastor1 from "@/assets/pastor1.jpg";
 
 const AboutSection = () => {
@@ -18,11 +18,11 @@ const AboutSection = () => {
           </h2>
         </motion.div>
 
-        {/* Mission & Vision Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+        {/* Mission, Vision & Faith Declaration */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="p-8 rounded-2xl bg-card border border-border"
             style={{ boxShadow: "var(--shadow-soft)" }}
@@ -30,22 +30,17 @@ const AboutSection = () => {
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Mission Statement</h3>
-            <p className="font-body text-muted-foreground leading-relaxed">
+            <h3 className="font-display font-bold text-xl text-foreground mb-3">Mission Statement</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">
               This is a place where we gather together in quality praise and worship of the true and living God, equipped with the Word of God for growth and fellowship with one another in covenant relationship, and released to make a formidable impact in our world for the Kingdom.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mt-3">
-              TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mt-3">
-              Here we do not look at the bigness of your problem but the bigness of our God.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
             className="p-8 rounded-2xl bg-card border border-border"
             style={{ boxShadow: "var(--shadow-soft)" }}
           >
@@ -53,8 +48,28 @@ const AboutSection = () => {
               <Eye className="w-6 h-6 text-secondary" />
             </div>
             <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Vision</h3>
-            <p className="font-body text-muted-foreground leading-relaxed">
+            <p className="font-body text-muted-foreground leading-relaxed text-sm">
               At The Redeemed Evangelical Mission (TREM), our vision is to "raise a people to live the Kingdom Life here on Earth." We engage in the process of <span className="font-semibold text-foreground">DISCOVERING</span> individuals, <span className="font-semibold text-foreground">DEVELOPING</span> them, and ultimately <span className="font-semibold text-foreground">DEPLOYING</span> them.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="p-8 rounded-2xl bg-card border border-border"
+            style={{ boxShadow: "var(--shadow-soft)" }}
+          >
+            <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
+              <Flame className="w-6 h-6 text-destructive" />
+            </div>
+            <h3 className="font-display font-bold text-xl text-foreground mb-3">Faith Declaration</h3>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm italic">
+              "Here we do not look at the bigness of your problem but the bigness of our God."
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed text-sm mt-3">
+              TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you.
             </p>
           </motion.div>
         </div>
@@ -105,9 +120,6 @@ const AboutSection = () => {
               <div className="font-body text-sm text-muted-foreground leading-relaxed space-y-2">
                 <p>
                   <span className="font-semibold text-foreground">TREM International</span> — The Redeemed Evangelical Mission was founded on January 4, 1981 by Bishop Mike Okonkwo, with headquarters in Lagos, Nigeria.
-                </p>
-                <p className="italic text-foreground/70">
-                  "Here we do not look at the bigness of your problem but the bigness of our God."
                 </p>
               </div>
             </div>

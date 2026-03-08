@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <img src={pastor2} alt="Pastor preaching" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="TREM Oke Aro" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "var(--overlay-dark)" }} />
       </div>
 

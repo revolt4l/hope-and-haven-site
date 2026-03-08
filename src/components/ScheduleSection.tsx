@@ -4,34 +4,24 @@ import { Clock, Sun, Flame, Sparkles, Heart } from "lucide-react";
 const scheduleData = [
   {
     day: "Sunday",
+    day: "Sunday",
     icon: Sun,
     label: "Morning Celebration Services",
     services: [
-      { name: "Workers Church", time: "6:30 AM" },
-      { name: "1st Main Service", time: "7:15 AM" },
-      { name: "2nd Main Service", time: "9:05 AM" },
+      { name: "Sunday Service", time: "8:00 AM – 10:00 AM" },
     ],
   },
   {
     day: "Tuesday",
     icon: Heart,
-    label: "Power for Living / Communion Service",
-    services: [{ name: "Power for Living & Communion", time: "5:00 PM – 6:30 PM" }],
+    label: "Power for Living Service",
+    services: [{ name: "Power for Living", time: "5:00 PM – 6:30 PM" }],
   },
   {
     day: "Friday",
     icon: Flame,
     label: "Miracle Rally / Mount Zion Experience",
     services: [{ name: "Miracle Rally / Mt. Zion Experience", time: "4:30 PM / 5:00 PM" }],
-  },
-  {
-    day: "Daily",
-    icon: Sparkles,
-    label: "Prayer Sessions",
-    services: [
-      { name: "Morning Prayers", time: "9:00 AM – 12:00 PM" },
-      { name: "Evening Prayers", time: "5:00 PM – 6:00 PM" },
-    ],
   },
 ];
 

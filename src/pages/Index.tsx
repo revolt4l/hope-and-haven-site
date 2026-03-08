@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import MonthlyTheme from "@/components/MonthlyTheme";
 import ScheduleSection from "@/components/ScheduleSection";
 import GallerySection from "@/components/GallerySection";
+import ImageCarousel from "@/components/ImageCarousel";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <MonthlyTheme />
+      <ImageCarousel />
       <ScheduleSection />
       <GallerySection />
       <ContactSection />

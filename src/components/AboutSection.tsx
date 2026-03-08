@@ -54,10 +54,7 @@ const AboutSection = () => {
             </div>
             <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Vision</h3>
             <p className="font-body text-muted-foreground leading-relaxed">
-              To be a beacon of hope — a thriving, Spirit-filled church that transforms lives, raises leaders, and extends God's kingdom across Akure, Nigeria, and beyond.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mt-2 italic font-medium">
-              "TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you."
+              At The Redeemed Evangelical Mission (TREM), our vision is to "raise a people to live the Kingdom Life here on Earth." We engage in the process of <span className="font-semibold text-foreground">DISCOVERING</span> individuals, <span className="font-semibold text-foreground">DEVELOPING</span> them, and ultimately <span className="font-semibold text-foreground">DEPLOYING</span> them.
             </p>
           </motion.div>
         </div>

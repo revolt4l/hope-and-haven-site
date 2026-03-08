@@ -32,7 +32,7 @@ const AboutSection = () => {
             </div>
             <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Mission</h3>
             <p className="font-body text-muted-foreground leading-relaxed">
-              To raise a people for God — empowering every believer to live the Kingdom life on earth through worship, the Word, and fellowship. We are committed to evangelism, discipleship, and transforming our community through the love of Christ.
+              This is a place where we gather together in quality praise and worship of the true and living God, equipped with the Word of God for growth and fellowship with one another in covenant relationship, and released to make a formidable impact in our world for the Kingdom.
             </p>
           </motion.div>
 

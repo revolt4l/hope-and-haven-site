@@ -43,24 +43,25 @@ const TestimonySection = () => {
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
 
-  // Fetch approved testimonies from DB
-  useEffect(() => {
-    const fetchTestimonies = async () => {
-      const { data, error } = await supabase
-        .from("testimonies")
-        .select("name, testimony")
-        .order("created_at", { ascending: false });
+  // Fetch testimonies from DB
+  const fetchTestimonies = useCallback(async () => {
+    const { data, error } = await supabase
+      .from("testimonies")
+      .select("name, testimony")
+      .order("created_at", { ascending: false });
 
-      if (!error && data && data.length > 0) {
-        const dbTestimonies: Testimony[] = data.map((t) => ({
-          name: t.name,
-          text: t.testimony,
-        }));
-        setAllTestimonies([...staticTestimonies, ...dbTestimonies]);
-      }
-    };
-    fetchTestimonies();
+    if (!error && data && data.length > 0) {
+      const dbTestimonies: Testimony[] = data.map((t) => ({
+        name: t.name,
+        text: t.testimony,
+      }));
+      setAllTestimonies([...staticTestimonies, ...dbTestimonies]);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchTestimonies();
+  }, [fetchTestimonies]);
 
   const next = useCallback(
     () => setCurrent((c) => (c + 1) % allTestimonies.length),

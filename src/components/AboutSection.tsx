@@ -107,6 +107,19 @@ const AboutSection = () => {
             </p>
             <p className="text-primary-foreground/50 font-body text-sm mt-1">— TREM Motto</p>
           </div>
+          <div className="p-4 rounded-xl bg-card border border-border text-center" style={{ boxShadow: "var(--shadow-soft)" }}>
+            <p className="font-body text-xs text-muted-foreground">
+              This website was professionally designed & developed by{" "}
+              <a
+                href="https://goratechpowerhub.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-secondary hover:underline"
+              >
+                Goratech Power Hub
+              </a>
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

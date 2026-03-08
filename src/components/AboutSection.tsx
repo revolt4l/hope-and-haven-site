@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import pastor1 from "@/assets/pastor1.jpg";
 
 const AboutSection = () => {
   return (
@@ -7,27 +6,10 @@ const AboutSection = () => {
       <div className="container">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          >
-            <div className="relative">
-              <img
-                src={pastor1}
-                alt="Reverend Marcus Akinduko preaching"
-                className="rounded-2xl w-full object-cover aspect-[4/5]"
-                style={{ boxShadow: "var(--shadow-elevated)" }}
-              />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl bg-secondary/20 -z-10" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">Meet Our Pastor</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">

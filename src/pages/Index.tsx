@@ -16,7 +16,7 @@ const Index = () => {
       <MonthlyTheme />
       <ImageCarousel />
       <ScheduleSection />
-      <GallerySection />
+      
       <ContactSection />
       <Footer />
     </div>

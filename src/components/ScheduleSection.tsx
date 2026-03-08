@@ -4,7 +4,6 @@ import { Clock, Sun, Flame, Sparkles, Heart } from "lucide-react";
 const scheduleData = [
   {
     day: "Sunday",
-    day: "Sunday",
     icon: Sun,
     label: "Morning Celebration Services",
     services: [

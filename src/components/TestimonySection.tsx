@@ -95,7 +95,7 @@ const TestimonySection = () => {
       setFormTestimony("");
       toast({
         title: "Testimony Submitted!",
-        description: "Your testimony has been submitted and will appear after approval.",
+        description: "Your testimony has been shared successfully!",
       });
       setTimeout(() => {
         setSubmitted(false);

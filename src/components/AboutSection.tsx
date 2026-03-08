@@ -30,9 +30,15 @@ const AboutSection = () => {
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Mission</h3>
+            <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Mission Statement</h3>
             <p className="font-body text-muted-foreground leading-relaxed">
               This is a place where we gather together in quality praise and worship of the true and living God, equipped with the Word of God for growth and fellowship with one another in covenant relationship, and released to make a formidable impact in our world for the Kingdom.
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed mt-3">
+              TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you.
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed mt-3">
+              Here we do not look at the bigness of your problem but the bigness of our God.
             </p>
           </motion.div>
 

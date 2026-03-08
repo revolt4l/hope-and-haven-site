@@ -55,7 +55,7 @@ const TestimonySection = () => {
         name: t.name,
         text: t.testimony,
       }));
-      setAllTestimonies([...staticTestimonies, ...dbTestimonies]);
+      setAllTestimonies([...staticTestimonies, ...dbTestimonies].slice(0, 6));
     }
   }, []);
 

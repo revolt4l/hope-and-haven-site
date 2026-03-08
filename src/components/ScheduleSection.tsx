@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
-import { Clock, Sun, Flame, Sparkles, Heart } from "lucide-react";
+import { Clock, Sun, Flame, Heart, Calendar } from "lucide-react";
 
 const scheduleData = [
   {
     day: "Sunday",
     icon: Sun,
-    label: "Morning Celebration Services",
+    label: "Morning Celebration",
     services: [
-      { name: "Sunday Service", time: "8:00 AM – 10:00 AM" },
+      { name: "Sunday Worship Service", time: "8:00 AM – 10:00 AM" },
     ],
+    accent: "bg-secondary/20 text-secondary",
   },
   {
     day: "Tuesday",
     icon: Heart,
-    label: "Power for Living Service",
-    services: [{ name: "Power for Living", time: "5:00 PM – 6:30 PM" }],
+    label: "Midweek Recharge",
+    services: [{ name: "Power for Living Service", time: "5:00 PM – 6:30 PM" }],
+    accent: "bg-primary/10 text-primary",
   },
   {
     day: "Friday",
     icon: Flame,
-    label: "Miracle Rally / Mount Zion Experience",
+    label: "Encounter Night",
     services: [{ name: "Miracle Rally / Mt. Zion Experience", time: "4:30 PM / 5:00 PM" }],
+    accent: "bg-destructive/10 text-destructive",
   },
 ];
 
@@ -34,41 +37,40 @@ const ScheduleSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">Join Us</p>
+          <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">
+            <Calendar className="inline w-4 h-4 mr-1 -mt-0.5" />
+            Join Us
+          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4">
             Weekly Service Schedule
           </h2>
           <p className="text-primary-foreground/60 font-body text-lg max-w-xl mx-auto">
-            There's always a place for you at TREM Oke Aro. Come experience God's presence with us.
+            There's always a place for you. Come experience God's presence — every service is an opportunity for a fresh encounter.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {scheduleData.map((item, i) => (
             <motion.div
               key={item.day}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-2xl p-6 border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm"
+              transition={{ delay: i * 0.15 }}
+              className="rounded-2xl p-8 border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-sm text-center hover:bg-primary-foreground/10 transition-colors"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-primary-foreground text-lg">{item.day}</h3>
-                  <p className="text-primary-foreground/50 font-body text-xs">{item.label}</p>
-                </div>
+              <div className={`w-14 h-14 rounded-2xl ${item.accent} flex items-center justify-center mx-auto mb-5`}>
+                <item.icon className="w-7 h-7" />
               </div>
+              <h3 className="font-display font-bold text-primary-foreground text-2xl mb-1">{item.day}</h3>
+              <p className="text-primary-foreground/50 font-body text-sm mb-5">{item.label}</p>
               <div className="space-y-3">
                 {item.services.map((service) => (
-                  <div key={service.name} className="flex items-start gap-2">
-                    <Clock className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-primary-foreground/90 font-body text-sm font-medium">{service.name}</p>
-                      <p className="text-secondary font-body text-sm font-semibold">{service.time}</p>
+                  <div key={service.name} className="bg-primary-foreground/5 rounded-xl p-4">
+                    <p className="text-primary-foreground/90 font-body text-sm font-medium mb-1">{service.name}</p>
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-secondary" />
+                      <p className="text-secondary font-body text-sm font-bold">{service.time}</p>
                     </div>
                   </div>
                 ))}
@@ -76,6 +78,15 @@ const ScheduleSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-primary-foreground/40 font-body text-sm mt-10"
+        >
+          First-time visitor? We'd love to meet you! Come a few minutes early and our greeters will make you feel right at home.
+        </motion.p>
       </div>
     </section>
   );

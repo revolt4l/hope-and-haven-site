@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import pastor2 from "@/assets/pastor2.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (

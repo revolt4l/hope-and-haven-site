@@ -47,6 +47,11 @@ const AboutSection = () => {
               </p>
               <p className="text-muted-foreground font-body text-sm mt-1">— TREM Motto</p>
             </div>
+            <div className="mt-6 p-5 rounded-xl bg-muted/50 border border-border">
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">TREM International</span> — The Redeemed Evangelical Mission was founded on January 4, 1981 by Bishop Mike Okonkwo, with headquarters in Lagos, Nigeria. TREM's mission is to raise a people for God, empowering them to live the Kingdom life on earth through worship, word, and fellowship. The ministry operates worldwide with numerous branches and a strong commitment to evangelism and community outreach.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

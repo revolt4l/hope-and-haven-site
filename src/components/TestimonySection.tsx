@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import { Quote } from "lucide-react";
+import { Quote, Cake } from "lucide-react";
 
 const testimonies = [
   {
-    name: "Sister Funke Adeyemi",
-    text: "God healed me of a chronic illness that doctors said had no cure. I give all glory to God for His faithfulness!",
+    name: "All March Celebrants",
+    text: "Happy Birthday to all our March celebrants! May the Lord bless you with good health, long life, and abundant grace. Your new age is blessed in Jesus' name!",
+    isBirthday: true,
   },
   {
     name: "Brother James Okonkwo",
@@ -54,7 +55,7 @@ const TestimonySection = () => {
               className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out px-4"
               style={{ opacity: i === current ? 1 : 0, pointerEvents: i === current ? "auto" : "none" }}
             >
-              <Quote className="w-8 h-8 text-secondary mb-4" />
+              {(t as any).isBirthday ? <Cake className="w-8 h-8 text-secondary mb-4" /> : <Quote className="w-8 h-8 text-secondary mb-4" />}
               <p className="text-lg md:text-xl font-body text-muted-foreground italic leading-relaxed mb-6">
                 "{t.text}"
               </p>

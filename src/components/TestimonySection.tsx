@@ -171,7 +171,7 @@ const TestimonySection = () => {
                   <CheckCircle className="w-12 h-12 text-green-500 mb-3" />
                   <p className="font-display font-semibold text-foreground text-lg">Thank you!</p>
                   <p className="text-muted-foreground font-body text-sm mt-1">
-                    Your testimony will appear after approval.
+                    Your testimony has been shared. God bless you!
                   </p>
                 </div>
               ) : (

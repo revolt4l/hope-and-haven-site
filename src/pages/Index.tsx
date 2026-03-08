@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import MonthlyTheme from "@/components/MonthlyTheme";
 import ScheduleSection from "@/components/ScheduleSection";
 import ImageCarousel from "@/components/ImageCarousel";
+import TestimonySection from "@/components/TestimonySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 

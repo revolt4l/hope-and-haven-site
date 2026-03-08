@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 lg:py-28" style={{ background: "var(--section-gradient)" }}>
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

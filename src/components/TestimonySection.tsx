@@ -94,6 +94,7 @@ const TestimonySection = () => {
       setSubmitted(true);
       setFormName("");
       setFormTestimony("");
+      await fetchTestimonies();
       toast({
         title: "Testimony Submitted!",
         description: "Your testimony has been shared successfully!",

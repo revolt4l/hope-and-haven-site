@@ -32,7 +32,7 @@ const AboutSection = () => {
             </div>
             <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Mission</h3>
             <p className="font-body text-muted-foreground leading-relaxed">
-              To raise a people for God — empowering every believer to live the Kingdom life on earth through worship, the Word, and fellowship. We are committed to evangelism, discipleship, and transforming our community through the love of Christ.
+              This is a place where we gather together in quality praise and worship of the true and living God, equipped with the Word of God for growth and fellowship with one another in covenant relationship, and released to make a formidable impact in our world for the Kingdom.
             </p>
           </motion.div>
 
@@ -48,7 +48,10 @@ const AboutSection = () => {
             </div>
             <h3 className="font-display font-bold text-xl text-foreground mb-3">Our Vision</h3>
             <p className="font-body text-muted-foreground leading-relaxed">
-              To be a beacon of hope — a thriving, Spirit-filled church that transforms lives, raises leaders, and extends God's kingdom across Akure, Nigeria, and beyond. We envision families healed, communities restored, and destinies fulfilled.
+              To be a beacon of hope — a thriving, Spirit-filled church that transforms lives, raises leaders, and extends God's kingdom across Akure, Nigeria, and beyond.
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed mt-2 italic font-medium">
+              "TREM is big enough to contain you, small enough to reach you, and powerful enough to deal with anything the devil brings against you."
             </p>
           </motion.div>
         </div>
@@ -96,9 +99,14 @@ const AboutSection = () => {
           <div className="p-6 rounded-xl bg-muted/50 border border-border">
             <div className="flex items-start gap-3">
               <BookOpen className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">TREM International</span> — The Redeemed Evangelical Mission was founded on January 4, 1981 by Bishop Mike Okonkwo, with headquarters in Lagos, Nigeria. TREM's mission is to raise a people for God, empowering them to live the Kingdom life through worship, word, and fellowship. The ministry operates worldwide with numerous branches and a strong commitment to evangelism and community outreach.
-              </p>
+              <div className="font-body text-sm text-muted-foreground leading-relaxed space-y-2">
+                <p>
+                  <span className="font-semibold text-foreground">TREM International</span> — The Redeemed Evangelical Mission was founded on January 4, 1981 by Bishop Mike Okonkwo, with headquarters in Lagos, Nigeria.
+                </p>
+                <p className="italic text-foreground/70">
+                  "Here we do not look at the bigness of your problem but the bigness of our God."
+                </p>
+              </div>
             </div>
           </div>
           <div className="text-center p-6 rounded-xl bg-foreground">

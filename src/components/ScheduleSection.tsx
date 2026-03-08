@@ -7,7 +7,7 @@ const scheduleData = [
     icon: Sun,
     label: "Morning Celebration",
     services: [
-      { name: "Sunday Worship Service", time: "8:00 AM – 10:00 AM" },
+      { name: "Sunday Worship Service", time: "8:30 AM – 10:30 AM" },
     ],
     accent: "bg-secondary/20 text-secondary",
   },
@@ -15,14 +15,14 @@ const scheduleData = [
     day: "Tuesday",
     icon: Heart,
     label: "Midweek Recharge",
-    services: [{ name: "Power for Living Service", time: "5:00 PM – 6:30 PM" }],
+    services: [{ name: "Power for Living Service", time: "5:00 PM – 6:00 PM" }],
     accent: "bg-primary/10 text-primary",
   },
   {
-    day: "Friday",
+    day: "3rd Friday",
     icon: Flame,
-    label: "Encounter Night",
-    services: [{ name: "Miracle Rally / Mt. Zion Experience", time: "4:30 PM / 5:00 PM" }],
+    label: "Monthly Encounter",
+    services: [{ name: "Miracle Rally Service", time: "5:00 PM – 6:00 PM" }],
     accent: "bg-destructive/10 text-destructive",
   },
 ];

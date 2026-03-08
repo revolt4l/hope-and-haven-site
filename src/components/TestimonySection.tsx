@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Quote } from "lucide-react";
+import { Quote, Cake } from "lucide-react";
 
 const testimonies = [
   {

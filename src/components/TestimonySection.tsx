@@ -43,25 +43,25 @@ const TestimonySection = () => {
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
 
-  // Fetch approved testimonies from DB
-  useEffect(() => {
-    const fetchTestimonies = async () => {
-      const { data, error } = await supabase
-        .from("testimonies")
-        .select("name, testimony")
-        .eq("is_approved", true)
-        .order("created_at", { ascending: false });
+  // Fetch testimonies from DB
+  const fetchTestimonies = useCallback(async () => {
+    const { data, error } = await supabase
+      .from("testimonies")
+      .select("name, testimony")
+      .order("created_at", { ascending: false });
 
-      if (!error && data && data.length > 0) {
-        const dbTestimonies: Testimony[] = data.map((t) => ({
-          name: t.name,
-          text: t.testimony,
-        }));
-        setAllTestimonies([...staticTestimonies, ...dbTestimonies]);
-      }
-    };
-    fetchTestimonies();
+    if (!error && data && data.length > 0) {
+      const dbTestimonies: Testimony[] = data.map((t) => ({
+        name: t.name,
+        text: t.testimony,
+      }));
+      setAllTestimonies([...staticTestimonies, ...dbTestimonies]);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchTestimonies();
+  }, [fetchTestimonies]);
 
   const next = useCallback(
     () => setCurrent((c) => (c + 1) % allTestimonies.length),
@@ -94,9 +94,10 @@ const TestimonySection = () => {
       setSubmitted(true);
       setFormName("");
       setFormTestimony("");
+      await fetchTestimonies();
       toast({
         title: "Testimony Submitted!",
-        description: "Your testimony has been submitted and will appear after approval.",
+        description: "Your testimony has been shared successfully!",
       });
       setTimeout(() => {
         setSubmitted(false);
@@ -172,7 +173,7 @@ const TestimonySection = () => {
                   <CheckCircle className="w-12 h-12 text-green-500 mb-3" />
                   <p className="font-display font-semibold text-foreground text-lg">Thank you!</p>
                   <p className="text-muted-foreground font-body text-sm mt-1">
-                    Your testimony will appear after approval.
+                    Your testimony has been shared. God bless you!
                   </p>
                 </div>
               ) : (

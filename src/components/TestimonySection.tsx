@@ -11,7 +11,7 @@ interface Testimony {
 
 const TestimonySection = () => {
   const [current, setCurrent] = useState(0);
-  const [allTestimonies, setAllTestimonies] = useState<Testimony[]>(staticTestimonies);
+  const [allTestimonies, setAllTestimonies] = useState<Testimony[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [formName, setFormName] = useState("");
   const [formTestimony, setFormTestimony] = useState("");

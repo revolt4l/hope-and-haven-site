@@ -26,12 +26,12 @@ const TestimonySection = () => {
       .select("name, testimony")
       .order("created_at", { ascending: false });
 
-    if (!error && data && data.length > 0) {
+    if (!error && data) {
       const dbTestimonies: Testimony[] = data.map((t) => ({
         name: t.name,
         text: t.testimony,
       }));
-      setAllTestimonies([...staticTestimonies, ...dbTestimonies].slice(0, 6));
+      setAllTestimonies(dbTestimonies);
     }
   }, []);
 

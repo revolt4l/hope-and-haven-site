@@ -24,7 +24,7 @@ const TestimonySection = () => {
     const { data, error } = await supabase
       .from("testimonies")
       .select("name, testimony")
-      .order("created_at", { ascending: false });
+      .limit(10);
 
     if (!error && data) {
       const dbTestimonies: Testimony[] = data.map((t) => ({

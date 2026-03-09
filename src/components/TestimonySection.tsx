@@ -24,7 +24,7 @@ const TestimonySection = () => {
     const { data, error } = await supabase
       .from("testimonies")
       .select("name, testimony")
-      .order("created_at", { ascending: false });
+      .limit(10);
 
     if (!error && data) {
       const dbTestimonies: Testimony[] = data.map((t) => ({
@@ -92,8 +92,26 @@ const TestimonySection = () => {
           Testimonies
         </h2>
 
-        {/* Carousel */}
-        <div className="relative min-h-[200px] flex items-center justify-center">
+        {/* Carousel with swipe */}
+        <div
+          className="relative min-h-[200px] flex items-center justify-center touch-pan-y"
+          onTouchStart={(e) => {
+            const touch = e.touches[0];
+            (e.currentTarget as any)._startX = touch.clientX;
+          }}
+          onTouchEnd={(e) => {
+            const startX = (e.currentTarget as any)._startX;
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) {
+                setCurrent((c) => (c + 1) % allTestimonies.length);
+              } else {
+                setCurrent((c) => (c - 1 + allTestimonies.length) % allTestimonies.length);
+              }
+            }
+          }}
+        >
           {allTestimonies.map((t, i) => (
             <div
               key={i}

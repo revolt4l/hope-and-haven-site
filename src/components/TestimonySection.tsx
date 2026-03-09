@@ -3,30 +3,6 @@ import { Quote, Cake, Send, CheckCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
-const staticTestimonies = [
-  {
-    name: "All March Celebrants",
-    text: "Happy Birthday to all our March celebrants! May the Lord bless you with good health, long life, and abundant grace. Your new age is blessed in Jesus' name!",
-    isBirthday: true,
-  },
-  {
-    name: "Brother James Okonkwo",
-    text: "After years of struggling, God opened a door of employment that I never expected. He is truly a way maker!",
-  },
-  {
-    name: "Sister Grace Akinola",
-    text: "My family was on the verge of breaking apart, but through prayers in this church, God restored peace and unity in my home.",
-  },
-  {
-    name: "Brother David Oluwaseun",
-    text: "I was involved in a terrible accident but walked away without a scratch. God's protection over my life is undeniable!",
-  },
-  {
-    name: "Sister Mary Adekunle",
-    text: "God blessed me with the fruit of the womb after 7 years of waiting. Nothing is impossible with God!",
-  },
-];
-
 interface Testimony {
   name: string;
   text: string;
@@ -35,7 +11,7 @@ interface Testimony {
 
 const TestimonySection = () => {
   const [current, setCurrent] = useState(0);
-  const [allTestimonies, setAllTestimonies] = useState<Testimony[]>(staticTestimonies);
+  const [allTestimonies, setAllTestimonies] = useState<Testimony[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [formName, setFormName] = useState("");
   const [formTestimony, setFormTestimony] = useState("");
@@ -50,12 +26,12 @@ const TestimonySection = () => {
       .select("name, testimony")
       .order("created_at", { ascending: false });
 
-    if (!error && data && data.length > 0) {
+    if (!error && data) {
       const dbTestimonies: Testimony[] = data.map((t) => ({
         name: t.name,
         text: t.testimony,
       }));
-      setAllTestimonies([...staticTestimonies, ...dbTestimonies].slice(0, 6));
+      setAllTestimonies(dbTestimonies);
     }
   }, []);
 

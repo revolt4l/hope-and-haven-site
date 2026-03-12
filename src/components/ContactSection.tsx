@@ -63,7 +63,7 @@ const ContactSection = () => {
             </motion.a>
 
             <motion.a
-              href="tel:+2348037382276"
+              href="tel:+2348033557991"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

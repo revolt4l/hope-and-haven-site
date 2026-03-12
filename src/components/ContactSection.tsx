@@ -24,7 +24,7 @@ const ContactSection = () => {
           {/* Contact Cards */}
           <div className="space-y-4">
             <motion.a
-              href="https://wa.me/2348037382276"
+              href="https://wa.me/2348033557991"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: -20 }}

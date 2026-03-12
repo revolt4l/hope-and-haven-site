@@ -24,7 +24,7 @@ const ContactSection = () => {
           {/* Contact Cards */}
           <div className="space-y-4">
             <motion.a
-              href="https://wa.me/2348037382276"
+              href="https://wa.me/2348033557991"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: -20 }}
@@ -38,7 +38,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-display font-semibold text-foreground">WhatsApp</p>
-                <p className="font-body text-sm text-muted-foreground">+234 803 738 2276</p>
+                <p className="font-body text-sm text-muted-foreground">+234 803 355 7991</p>
               </div>
             </motion.a>
 
@@ -63,7 +63,7 @@ const ContactSection = () => {
             </motion.a>
 
             <motion.a
-              href="tel:+2348037382276"
+              href="tel:+2348033557991"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -76,7 +76,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-display font-semibold text-foreground">Call Us</p>
-                <p className="font-body text-sm text-muted-foreground">+234 803 738 2276</p>
+                <p className="font-body text-sm text-muted-foreground">+234 803 355 7991</p>
               </div>
             </motion.a>
           </div>

@@ -24,7 +24,7 @@ const MonthlyTheme = () => {
         >
           <img
             src={monthlyTheme}
-            alt="March - The Month of Moving Forward"
+            alt="April – Our Month of Relevance"
             className="rounded-2xl w-full"
             style={{ boxShadow: "var(--shadow-elevated)" }}
           />

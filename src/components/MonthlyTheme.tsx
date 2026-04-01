@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import monthlyTheme from "@/assets/monthly-theme.jpg";
+import monthlyTheme from "@/assets/monthly-theme-april.jpg";
 
 const MonthlyTheme = () => {
   return (

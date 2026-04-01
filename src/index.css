@@ -76,4 +76,56 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .animated-bg-light {
+    position: relative;
+    overflow: hidden;
+  }
+  .animated-bg-light::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, hsla(35, 80%, 52%, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, hsla(0, 72%, 30%, 0.05) 0%, transparent 50%);
+    animation: drift-light 20s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .animated-bg-light > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .animated-bg-dark {
+    position: relative;
+    overflow: hidden;
+  }
+  .animated-bg-dark::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 25% 40%, hsla(35, 80%, 52%, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 60%, hsla(0, 72%, 30%, 0.1) 0%, transparent 50%);
+    animation: drift-dark 25s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .animated-bg-dark > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@keyframes drift-light {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-10%, 5%) rotate(3deg); }
+}
+
+@keyframes drift-dark {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(5%, -8%) rotate(-2deg); }
 }

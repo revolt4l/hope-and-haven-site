@@ -3,7 +3,7 @@ import { Facebook, MessageCircle, MapPin, Phone, Navigation } from "lucide-react
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 lg:py-28" style={{ background: "var(--section-gradient)" }}>
+    <section id="contact" className="py-20 lg:py-28 animated-bg-light" style={{ background: "var(--section-gradient)" }}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

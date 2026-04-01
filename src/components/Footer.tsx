@@ -3,7 +3,7 @@ import bishopImg from "@/assets/bishop.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground pt-16 pb-8 border-t border-primary-foreground/10">
+    <footer className="bg-foreground pt-16 pb-8 border-t border-primary-foreground/10 animated-bg-dark">
       <div className="container">
         {/* Bishop */}
         <div className="flex flex-col items-center mb-10">

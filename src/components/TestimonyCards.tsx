@@ -76,7 +76,7 @@ const TestimonyCards = () => {
   if (testimonies.length === 0) return null;
 
   return (
-    <section className="py-16 lg:py-20" style={{ background: "var(--section-gradient)" }}>
+    <section className="py-16 lg:py-20 animated-bg-light" style={{ background: "var(--section-gradient)" }}>
       <div className="container max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -83,7 +83,7 @@ const TestimonySection = () => {
   };
 
   return (
-    <section className="py-16 lg:py-20" style={{ background: "var(--section-gradient)" }}>
+    <section className="py-16 lg:py-20 animated-bg-light" style={{ background: "var(--section-gradient)" }}>
       <div className="container max-w-3xl mx-auto text-center">
         <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-2">
           Praise Reports

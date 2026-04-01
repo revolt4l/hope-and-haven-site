@@ -33,7 +33,7 @@ const GallerySection = () => {
 
   return (
     <>
-      <section id="gallery" className="py-20 lg:py-28 bg-muted">
+      <section id="gallery" className="py-20 lg:py-28 bg-muted animated-bg-light">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

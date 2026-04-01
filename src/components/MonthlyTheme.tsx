@@ -13,7 +13,7 @@ const MonthlyTheme = () => {
         >
           <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">This Month's Declaration</p>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-            March — The Month of Moving Forward
+            April – Our Month of Relevance
           </h2>
         </motion.div>
         <motion.div

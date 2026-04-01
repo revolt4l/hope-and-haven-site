@@ -19,7 +19,7 @@ const Index = () => {
       <MonthlyTheme />
       <ScheduleSection />
       <EventsSection />
-      <ImageCarousel />
+      <GallerySection />
       <TestimonySection />
       <TestimonyCards />
       <ContactSection />

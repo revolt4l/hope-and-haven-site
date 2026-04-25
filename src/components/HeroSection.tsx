@@ -11,12 +11,12 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: "var(--overlay-dark)" }} />
       </div>
 
-      <div className="container relative z-10 py-20 flex justify-start lg:justify-center">
+      <div className="container relative z-10 py-20 flex justify-start lg:justify-center lg:items-center min-h-screen lg:min-h-screen">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-3xl lg:text-center lg:flex lg:flex-col lg:items-center"
+          className="max-w-3xl lg:text-center lg:flex lg:flex-col lg:items-center lg:justify-center"
         >
           <motion.p
             initial={{ opacity: 0 }}

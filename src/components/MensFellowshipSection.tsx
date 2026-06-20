@@ -81,7 +81,7 @@ const MensFellowshipSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">
             <CalendarDays className="inline w-4 h-4 mr-1 -mt-0.5" />
@@ -90,9 +90,25 @@ const MensFellowshipSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4">
             Men's Fellowship 2026 — Programme of Events
           </h2>
-          <p className="text-primary-foreground/60 font-body text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/60 font-body text-lg max-w-xl mx-auto mb-3">
             TREM Oke-Aro, Akure
           </p>
+          <p className="text-primary-foreground font-body text-base md:text-lg max-w-xl mx-auto flex items-center justify-center gap-2">
+            <Clock className="w-4 h-4 text-secondary" />
+            Sunday, 21 June 2026 — 8:30 AM
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto mb-16"
+        >
+          <p className="text-center font-body text-sm text-primary-foreground/50 uppercase tracking-wider mb-4">
+            Countdown to Event
+          </p>
+          <Countdown />
         </motion.div>
 
         <motion.div

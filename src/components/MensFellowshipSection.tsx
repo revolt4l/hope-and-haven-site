@@ -1,5 +1,8 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CalendarDays, Utensils } from "lucide-react";
+import { CalendarDays, Clock, Utensils } from "lucide-react";
+
+const EVENT_DATE = new Date("2026-06-21T08:30:00+01:00");
 
 const programmeItems = [
   { number: "1", activity: "Opening Prayer", officiant: "Bro Bowale Adeyeye" },

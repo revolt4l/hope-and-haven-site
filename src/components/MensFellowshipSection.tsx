@@ -1,5 +1,60 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CalendarDays, Utensils } from "lucide-react";
+import { CalendarDays, Clock, Utensils } from "lucide-react";
+
+const EVENT_DATE = new Date("2026-06-21T08:30:00+01:00");
+
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const calculate = () => {
+      const now = new Date().getTime();
+      const distance = EVENT_DATE.getTime() - now;
+      if (distance <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      }
+      setStarted(true);
+    };
+
+    calculate();
+    const interval = setInterval(calculate, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const units = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
+  return (
+    <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
+      {units.map((unit) => (
+        <div
+          key={unit.label}
+          className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-2 sm:p-4 text-center backdrop-blur-sm"
+        >
+          <div className="font-display text-2xl sm:text-4xl font-bold text-secondary">
+            {started ? String(unit.value).padStart(2, "0") : "--"}
+          </div>
+          <div className="font-body text-[10px] sm:text-xs text-primary-foreground/50 uppercase tracking-wider mt-1">
+            {unit.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const programmeItems = [
   { number: "1", activity: "Opening Prayer", officiant: "Bro Bowale Adeyeye" },
@@ -26,7 +81,7 @@ const MensFellowshipSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">
             <CalendarDays className="inline w-4 h-4 mr-1 -mt-0.5" />
@@ -35,9 +90,25 @@ const MensFellowshipSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4">
             Men's Fellowship 2026 — Programme of Events
           </h2>
-          <p className="text-primary-foreground/60 font-body text-lg max-w-xl mx-auto">
+          <p className="text-primary-foreground/60 font-body text-lg max-w-xl mx-auto mb-3">
             TREM Oke-Aro, Akure
           </p>
+          <p className="text-primary-foreground font-body text-base md:text-lg max-w-xl mx-auto flex items-center justify-center gap-2">
+            <Clock className="w-4 h-4 text-secondary" />
+            Sunday, 21 June 2026 — 8:30 AM
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto mb-16"
+        >
+          <p className="text-center font-body text-sm text-primary-foreground/50 uppercase tracking-wider mb-4">
+            Countdown to Event
+          </p>
+          <Countdown />
         </motion.div>
 
         <motion.div

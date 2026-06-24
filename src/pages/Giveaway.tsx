@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Trophy, Loader2 } from "lucide-react";
+import { Trophy, Loader2, MessageCircle } from "lucide-react";
 
 type Question = { q: string; options: string[]; answer: string };
 

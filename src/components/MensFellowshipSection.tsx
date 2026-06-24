@@ -15,6 +15,7 @@ const Countdown = () => {
       const distance = EVENT_DATE.getTime() - now;
       if (distance <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setHasPassed(true);
       } else {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
@@ -22,6 +23,7 @@ const Countdown = () => {
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000),
         });
+        setHasPassed(false);
       }
       setStarted(true);
     };

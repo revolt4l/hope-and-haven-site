@@ -8,8 +8,10 @@ const navLinks = [
   { label: "Events", href: "#events" },
   { label: "Men's Fellowship 2026", href: "#mens-fellowship-2026" },
   { label: "Location", href: "#contact" },
+  { label: "Giveaway", href: "/giveaway" },
   { label: "Contact", href: "#contact" },
 ];
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      giveaway_attempts: {
+        Row: {
+          created_at: string
+          id: string
+          is_winner: boolean
+          name: string
+          phone: string
+          score: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_winner?: boolean
+          name: string
+          phone: string
+          score: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_winner?: boolean
+          name?: string
+          phone?: string
+          score?: number
+        }
+        Relationships: []
+      }
+      giveaway_winner: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          phone: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
       testimonies: {
         Row: {
           created_at: string

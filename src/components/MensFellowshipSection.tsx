@@ -7,6 +7,7 @@ const EVENT_DATE = new Date("2026-06-21T08:30:00+01:00");
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [started, setStarted] = useState(false);
+  const [hasPassed, setHasPassed] = useState(false);
 
   useEffect(() => {
     const calculate = () => {

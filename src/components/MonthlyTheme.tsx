@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import monthlyTheme from "@/assets/monthly-theme-april.jpg";
+import monthlyTheme from "@/assets/monthly-theme-june.jpg";
 
 const MonthlyTheme = () => {
   return (
@@ -13,7 +13,7 @@ const MonthlyTheme = () => {
         >
           <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-3">This Month's Declaration</p>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-            April – Our Month of Relevance
+            June – Our Month of Divine Turnaround
           </h2>
         </motion.div>
         <motion.div
@@ -24,7 +24,7 @@ const MonthlyTheme = () => {
         >
           <img
             src={monthlyTheme}
-            alt="April – Our Month of Relevance"
+            alt="June – Our Month of Divine Turnaround"
             className="rounded-2xl w-full"
             style={{ boxShadow: "var(--shadow-elevated)" }}
           />

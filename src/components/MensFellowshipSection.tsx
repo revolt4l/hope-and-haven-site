@@ -42,18 +42,29 @@ const Countdown = () => {
 
   return (
     <div className="max-w-3xl mx-auto bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
-      <div className="grid grid-cols-4 divide-x divide-primary-foreground/10">
-        {units.map((unit) => (
-          <div key={unit.label} className="text-center px-2 sm:px-4">
-            <div className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-secondary leading-none">
-              {started ? String(unit.value).padStart(2, "0") : "--"}
+      {hasPassed ? (
+        <div className="text-center py-2">
+          <p className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-secondary leading-none">
+            Started
+          </p>
+          <p className="font-body text-sm text-primary-foreground/60 mt-3">
+            Event has begun — thank you for joining!
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-4 divide-x divide-primary-foreground/10">
+          {units.map((unit) => (
+            <div key={unit.label} className="text-center px-2 sm:px-4">
+              <div className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-secondary leading-none">
+                {started ? String(unit.value).padStart(2, "0") : "--"}
+              </div>
+              <div className="font-body text-[10px] sm:text-xs text-primary-foreground/50 uppercase tracking-[0.15em] mt-3">
+                {unit.label}
+              </div>
             </div>
-            <div className="font-body text-[10px] sm:text-xs text-primary-foreground/50 uppercase tracking-[0.15em] mt-3">
-              {unit.label}
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

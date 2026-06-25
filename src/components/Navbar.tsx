@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-foreground/95 backdrop-blur-md shadow-lg" : "bg-transparent"} border-b border-primary-foreground/10`}>
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-display font-bold text-lg text-primary-foreground">
+        <a href="/" className="font-display font-bold text-lg text-primary-foreground">
           TREM <span className="text-secondary">Oke Aro</span>
         </a>
 

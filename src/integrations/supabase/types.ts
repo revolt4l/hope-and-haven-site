@@ -17,6 +17,7 @@ export type Database = {
       giveaway_attempts: {
         Row: {
           created_at: string
+          email: string | null
           id: string
           is_winner: boolean
           name: string
@@ -25,6 +26,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          email?: string | null
           id?: string
           is_winner?: boolean
           name: string
@@ -33,6 +35,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          email?: string | null
           id?: string
           is_winner?: boolean
           name?: string
@@ -44,18 +47,21 @@ export type Database = {
       giveaway_winner: {
         Row: {
           created_at: string
+          email: string | null
           id: string
           name: string
           phone: string
         }
         Insert: {
           created_at?: string
+          email?: string | null
           id?: string
           name: string
           phone: string
         }
         Update: {
           created_at?: string
+          email?: string | null
           id?: string
           name?: string
           phone?: string

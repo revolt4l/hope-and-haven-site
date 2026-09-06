@@ -68,6 +68,63 @@ export type Database = {
         }
         Relationships: []
       }
+      hq_updates: {
+        Row: {
+          content_type: string
+          created_at: string
+          event_date: string | null
+          event_location: string | null
+          id: string
+          image_url: string | null
+          imported_at: string
+          original_content: string | null
+          publication_date: string | null
+          source: string
+          source_id: string | null
+          source_url: string | null
+          status: Database["public"]["Enums"]["hq_update_status"]
+          summary: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content_type?: string
+          created_at?: string
+          event_date?: string | null
+          event_location?: string | null
+          id?: string
+          image_url?: string | null
+          imported_at?: string
+          original_content?: string | null
+          publication_date?: string | null
+          source?: string
+          source_id?: string | null
+          source_url?: string | null
+          status?: Database["public"]["Enums"]["hq_update_status"]
+          summary?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content_type?: string
+          created_at?: string
+          event_date?: string | null
+          event_location?: string | null
+          id?: string
+          image_url?: string | null
+          imported_at?: string
+          original_content?: string | null
+          publication_date?: string | null
+          source?: string
+          source_id?: string | null
+          source_url?: string | null
+          status?: Database["public"]["Enums"]["hq_update_status"]
+          summary?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       testimonies: {
         Row: {
           created_at: string
@@ -100,7 +157,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      hq_update_status: "pending_review" | "approved" | "published" | "rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -227,6 +284,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      hq_update_status: ["pending_review", "approved", "published", "rejected"],
+    },
   },
 } as const

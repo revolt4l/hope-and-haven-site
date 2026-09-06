@@ -68,8 +68,42 @@ export type Database = {
         }
         Relationships: []
       }
+      hq_sync_runs: {
+        Row: {
+          error: string | null
+          finished_at: string | null
+          id: string
+          items_created: number
+          items_found: number
+          items_updated: number
+          started_at: string
+          status: string
+        }
+        Insert: {
+          error?: string | null
+          finished_at?: string | null
+          id?: string
+          items_created?: number
+          items_found?: number
+          items_updated?: number
+          started_at?: string
+          status?: string
+        }
+        Update: {
+          error?: string | null
+          finished_at?: string | null
+          id?: string
+          items_created?: number
+          items_found?: number
+          items_updated?: number
+          started_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
       hq_updates: {
         Row: {
+          content_hash: string | null
           content_type: string
           created_at: string
           event_date: string | null
@@ -77,6 +111,7 @@ export type Database = {
           id: string
           image_url: string | null
           imported_at: string
+          month_key: string | null
           original_content: string | null
           publication_date: string | null
           source: string
@@ -88,6 +123,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          content_hash?: string | null
           content_type?: string
           created_at?: string
           event_date?: string | null
@@ -95,6 +131,7 @@ export type Database = {
           id?: string
           image_url?: string | null
           imported_at?: string
+          month_key?: string | null
           original_content?: string | null
           publication_date?: string | null
           source?: string
@@ -106,6 +143,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          content_hash?: string | null
           content_type?: string
           created_at?: string
           event_date?: string | null
@@ -113,6 +151,7 @@ export type Database = {
           id?: string
           image_url?: string | null
           imported_at?: string
+          month_key?: string | null
           original_content?: string | null
           publication_date?: string | null
           source?: string

@@ -21,6 +21,8 @@ const Index = () => {
       <MonthlyTheme />
       <ScheduleSection />
       <EventsSection />
+      <HQUpdatesSection />
+
       <MensFellowshipSection />
       <GallerySection />
       <TestimonySection />

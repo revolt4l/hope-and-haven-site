@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Loader2, ExternalLink, Inbox } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Loader2, ExternalLink, Inbox, RefreshCw } from "lucide-react";
 
 type HQUpdate = {
   id: string;
@@ -39,25 +40,66 @@ const statusClass: Record<string, string> = {
 const fmt = (d: string | null) =>
   d ? new Date(d).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "—";
 
+type SyncRun = {
+  finished_at: string | null;
+  status: string;
+  items_found: number;
+  items_created: number;
+  items_updated: number;
+  error: string | null;
+};
+
 const AdminHQUpdates = () => {
+  const { toast } = useToast();
   const [rows, setRows] = useState<HQUpdate[]>([]);
   const [loading, setLoading] = useState(true);
+  const [syncing, setSyncing] = useState(false);
+  const [lastRun, setLastRun] = useState<SyncRun | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<(typeof STATUSES)[number]>("all");
 
-  useEffect(() => {
-    (async () => {
-      const { data, error } = await supabase
+  const load = useCallback(async () => {
+    const [{ data, error }, { data: runs }] = await Promise.all([
+      supabase
         .from("hq_updates")
         .select(
           "id,title,summary,source,source_url,image_url,content_type,publication_date,event_date,event_location,status,imported_at",
         )
-        .order("imported_at", { ascending: false });
-      if (error) setError(error.message);
-      else setRows((data as HQUpdate[]) ?? []);
-      setLoading(false);
-    })();
+        .order("imported_at", { ascending: false }),
+      supabase
+        .from("hq_sync_runs")
+        .select("finished_at,status,items_found,items_created,items_updated,error")
+        .order("started_at", { ascending: false })
+        .limit(1),
+    ]);
+    if (error) setError(error.message);
+    else setRows((data as HQUpdate[]) ?? []);
+    setLastRun(((runs as SyncRun[]) ?? [])[0] ?? null);
+    setLoading(false);
   }, []);
+
+  useEffect(() => {
+    load();
+  }, [load]);
+
+  const runSync = async () => {
+    setSyncing(true);
+    const { data, error } = await supabase.functions.invoke("sync-trem-hq", { body: {} });
+    setSyncing(false);
+    if (error || data?.status !== "success") {
+      toast({
+        title: "Sync failed",
+        description: data?.error ?? error?.message ?? "Please try again shortly.",
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Sync complete",
+        description: `${data.items_found} items checked · ${data.items_created} new · ${data.items_updated} updated.`,
+      });
+    }
+    await load();
+  };
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: rows.length };
@@ -77,11 +119,31 @@ const AdminHQUpdates = () => {
             <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
               TREM HQ Updates
             </h1>
-            <p className="font-body text-muted-foreground max-w-2xl">
-              Content imported from TREM International Headquarters, with its review status. Importing is
-              not automated yet — this view is read-only for now.
+            <p className="font-body text-muted-foreground max-w-2xl mb-6">
+              Content pulled automatically from trem.org. New items are published to the website straight
+              away, and an item that changes at HQ is updated here instead of duplicated.
             </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                onClick={runSync}
+                disabled={syncing}
+                className="inline-flex items-center gap-2 font-body text-sm font-semibold bg-primary text-primary-foreground px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60"
+              >
+                <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
+                {syncing ? "Syncing…" : "Sync TREM HQ Now"}
+              </button>
+              {lastRun && (
+                <span className="font-body text-xs text-muted-foreground">
+                  Last sync: {lastRun.finished_at ? new Date(lastRun.finished_at).toLocaleString() : "running"} ·{" "}
+                  {lastRun.status === "success"
+                    ? `${lastRun.items_created} new, ${lastRun.items_updated} updated`
+                    : lastRun.error ?? lastRun.status}
+                </span>
+              )}
+            </div>
           </header>
+
 
           <div className="flex flex-wrap gap-2 mb-8">
             {STATUSES.map((s) => (

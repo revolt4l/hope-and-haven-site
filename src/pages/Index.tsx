@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import MonthlyTheme from "@/components/MonthlyTheme";
 import ScheduleSection from "@/components/ScheduleSection";
 import EventsSection from "@/components/EventsSection";
+import HQUpdatesSection from "@/components/HQUpdatesSection";
 import MensFellowshipSection from "@/components/MensFellowshipSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonySection from "@/components/TestimonySection";
@@ -20,6 +21,8 @@ const Index = () => {
       <MonthlyTheme />
       <ScheduleSection />
       <EventsSection />
+      <HQUpdatesSection />
+
       <MensFellowshipSection />
       <GallerySection />
       <TestimonySection />

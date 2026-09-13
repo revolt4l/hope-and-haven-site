@@ -181,7 +181,7 @@ Deno.serve(async (req) => {
       // stable identity: monthly items keyed by type+month, everything else by title slug
       const sourceId = monthKey && contentType.startsWith('monthly')
         ? `${contentType}-${monthKey}`
-        : `${contentType}-${slugify(title)}`;
+        : slugify(title);
 
       const summary = String(it.summary ?? '').trim() || null;
       const original = String(it.original_content ?? '').trim() || null;

@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Loader2, ExternalLink, Inbox } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Loader2, ExternalLink, Inbox, RefreshCw } from "lucide-react";
 
 type HQUpdate = {
   id: string;
